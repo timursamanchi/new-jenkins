@@ -1,5 +1,5 @@
 # new-jenkins
-jenkins training for HSBC
+
 [![Build Status](http://ec2-34-244-30-52.eu-west-1.compute.amazonaws.com:8080/buildStatus/icon?job=new-pipeline-test-01)](http://ec2-3-255-233-100.eu-west-1.compute.amazonaws.com:8080/job/new-pipeline-test-01/) 
 ## step by step guide for instll docker on ubuntu
 
