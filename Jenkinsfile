@@ -18,7 +18,7 @@ pipeline {
         }
         stage ('post') {
             steps {
-                echo "biuld id: ${BUILD_ID}"
+                echo "Build ID: ${BUILD_ID}"
             }
 
         }
