@@ -13,7 +13,7 @@ pipeline {
         }
         stage ('install') {
             steps {
-                echo 'you know ${MY_STR}'
+                echo "you know ${MY_STR}"
             }
         }
     }
