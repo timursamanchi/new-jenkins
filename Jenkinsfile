@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        MY_STR = 'this is Timur'
+    }
+
     stages {
         stage ('testing') {
             steps {
@@ -9,7 +13,7 @@ pipeline {
         }
         stage ('install') {
             steps {
-                echo 'you know'
+                echo 'you know ${MY_STR}'
             }
         }
     }
