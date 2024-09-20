@@ -16,6 +16,11 @@ pipeline {
                 echo "you know ${MY_STR}"
             }
         }
-    }
+        stage ('post') {
+            steps {
+                echo "biuld id: ${BIULD_ID}"
+            }
 
+        }
+    }
 }
