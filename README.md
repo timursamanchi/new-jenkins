@@ -49,6 +49,7 @@ docker run --name jenkins-blueocean --restart=on-failure --detach \
 
 ```
 # increase the size of the swapfile
+```
  sudo fallocate -l 1G /var/swapfile
  sudo chmod 600 /var/swapfile
  sudo mkswap /var/swapfile
