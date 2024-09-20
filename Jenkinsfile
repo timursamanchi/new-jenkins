@@ -7,6 +7,11 @@ pipeline {
                 echo 'hello world'
             }
         }
+        stage ('install') {
+            steps {
+                echo 'you know'
+            }
+        }
     }
 
 }
