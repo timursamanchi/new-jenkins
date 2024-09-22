@@ -22,6 +22,11 @@ pipeline {
             choices: ['EAST','WEST','NORTH','SOUTH',],
             description: 'Select deployment region.'
         )
+
+        pasword ( name: 'Enter Db2 password',
+            defaultValur: 'fuckoff'
+            description: 'enter Db2 password or else'
+        )
     }
 
     environment {
