@@ -52,11 +52,6 @@ pipeline {
                 echo "build duration: ${currentBuild.duration}"
             }
         }
-        stage ('Manual Approval') {
-            steps {
-                input messa
-            }
-        }
         stage ('post') {
             steps {
                 echo "Build ID: ${BUILD_ID}"
