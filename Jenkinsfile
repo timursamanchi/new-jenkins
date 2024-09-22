@@ -22,13 +22,15 @@ pipeline {
             steps {
                 sh 'echo "this is a report" > new-jenkins-pipeline-report.txt'
                 echo "build duration: ${currentBuild.duration}"
-                echo "build duration: ${currentBuild.currentResult}"
+                echo "Results: ${currentBuild.currentResult}"
             }
         }
         stage ('post') {
             steps {
                 echo "Build ID: ${BUILD_ID}"
+                sh 'echo "build duration: ${currentBuild.duration}" >> new-jenkins-pipeline-report.txt'
                 sh 'echo "Build ID: ${BUILD_ID}" >> new-jenkins-pipeline-report.txt'
+                sh 'echo "Results: ${currentBuild.currentResult}" >> new-jenkins-pipeline-report.txt'
                 archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
             }
         }
