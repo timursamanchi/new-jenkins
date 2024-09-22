@@ -6,6 +6,11 @@ pipeline {
         string ( name: 'version',
             defaultValue: 'xx.x.x',
             description: 'Enter version to upgrade.')
+        
+        booleanParam ( name: 'RUN TEST',
+            defaultValue: false,
+            description: 'Toggle this value to run the tests'
+        )
     }
 
     environment {
