@@ -24,6 +24,7 @@ pipeline {
         stage ('post') {
             steps {
                 echo "Build ID: ${BUILD_ID}"
+                sh 'echo "Build ID: ${BUILD_ID}" >> new-jenkins-pipeline-report.txt'
             }
         }
     }
