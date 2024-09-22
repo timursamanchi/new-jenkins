@@ -16,11 +16,15 @@ pipeline {
                 echo "you know ${MY_STR}"
             }
         }
+        stage ('Report') {
+            stps {
+                sh 'echo "this is a report" > new-jenkins-pipeline-report.txt'
+            }
+        }
         stage ('post') {
             steps {
                 echo "Build ID: ${BUILD_ID}"
             }
-
         }
     }
 }
