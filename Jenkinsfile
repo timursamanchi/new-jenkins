@@ -12,7 +12,7 @@ pipeline {
         MY_STR = 'Hi this is Timur...'
         MAX_SIZE = 10
         MIN_SIZE = 100
-        D = currentBuild.currentResult
+        D = "${currentBuild.currentResult}"
     }
 
     stages {
