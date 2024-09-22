@@ -27,7 +27,6 @@ pipeline {
         stage ('post') {
             steps {
                 echo "Build ID: ${BUILD_ID}"
-                sh 'echo "build duration: ${currentBuild.duration}" >> new-jenkins-pipeline-report.txt'
                 archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
             }
         }
