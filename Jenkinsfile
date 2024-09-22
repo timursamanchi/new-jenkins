@@ -17,6 +17,11 @@ pipeline {
             defaultValue: 'Start of Refresh Cycle, spoke to John from IT,...lablablabla',
             description: 'Enter reasons for upgrade'
         )
+
+        choice ( name: 'AWS_REGION',
+            choices: ['EAST','WEST','NORTH','SOUTH',],
+            description: 'Select deployment region.'
+        )
     }
 
     environment {
