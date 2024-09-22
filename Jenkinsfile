@@ -37,7 +37,7 @@ pipeline {
 
                 // this is a line of comment
                 script {
-                    def duration = currentBuild.duration
+                    def duration = currentBuild.durationString ?: 'N/A'
                     sh 'echo "Duration: ${duration}" >> new-jenkins-pipeline-report.txt'
                 }
                 archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
