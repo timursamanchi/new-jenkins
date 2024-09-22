@@ -24,8 +24,8 @@ pipeline {
         )
 
         pasword ( name: 'Enter Db2 password',
-            defaultValur: 'fuckoff'
-            description: 'enter Db2 password or else'
+            defaultValur: 'fuckoff',
+            description: 'enter Db2 password or else.'
         )
     }
 
