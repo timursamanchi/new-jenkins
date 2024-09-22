@@ -14,7 +14,7 @@ pipeline {
         )
 
         text ( name: 'reasons',
-            defaultValue: 'Start of Refresh Cycle, spoke to John from IT,...lablablabla'
+            defaultValue: 'Start of Refresh Cycle, spoke to John from IT,...lablablabla',
             description: 'Enter reasons for upgrade'
         )
     }
