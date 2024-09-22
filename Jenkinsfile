@@ -3,17 +3,17 @@ pipeline {
     // this a line of comment
 
     parameters {
-        string ( name: 'version',
+        string ( name: 'VERSION',
             defaultValue: 'xx.x.x',
             description: 'Enter version to upgrade.'
         )
         
-        booleanParam ( name: 'RUN TEST',
+        booleanParam ( name: 'RUN_TEST',
             defaultValue: false,
             description: 'Toggle this value to run the tests'
         )
 
-        text ( name: 'reasons',
+        text ( name: 'REASONS',
             defaultValue: 'Start of Refresh Cycle, spoke to John from IT,...lablablabla',
             description: 'Enter reasons for upgrade'
         )
@@ -23,7 +23,7 @@ pipeline {
             description: 'Select deployment region.'
         )
 
-        password ( name: 'Enter Db2 password',
+        password ( name: 'DB2_PASSWORD',
             defaultValue: 'fuckoff',
             description: 'enter Db2 password or else.'
         )
