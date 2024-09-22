@@ -27,8 +27,7 @@ pipeline {
         stage ('post') {
             steps {
                 echo "Build ID: ${BUILD_ID}"
-                sh 'echo "this is 2nd line in the report ${BUILD_ID}" >> new-jenkins-pipeline-report.txt'
-                sh 'echo "this is 2nd line in the report ${currentBuild.duration}" >> new-jenkins-pipeline-report.txt'
+                sh 'echo "this is 2nd line in the report ${BUILD_ID}, ${currentBuild.duration}" >> new-jenkins-pipeline-report.txt'
                 archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
             }
         }
