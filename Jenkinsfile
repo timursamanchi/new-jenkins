@@ -21,8 +21,7 @@ pipeline {
         stage ('Report') {
             steps {
                 sh 'echo "this is a report" > new-jenkins-pipeline-report.txt'
-                echo "build duration: ${currentBuild.duration}"
-                echo "Results: ${currentBuild.currentResult}"
+
             }
         }
         stage ('post') {
