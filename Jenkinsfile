@@ -21,12 +21,13 @@ pipeline {
         stage ('Report') {
             steps {
                 sh 'echo "this is a report" > new-jenkins-pipeline-report.txt'
-
+                echo "build duration: ${currentBuild.duration}"
             }
         }
         stage ('post') {
             steps {
                 echo "Build ID: ${BUILD_ID}"
+
                 archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
             }
         }
