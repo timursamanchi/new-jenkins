@@ -4,6 +4,11 @@ Location of Jenkins files
 
 /var/lib/docker/volumes/jenkins-data/_data/workspace/new-pipeline-test-01/new-jenkins-pipeline-report.txt
 
+## list of Jenkins built-in enviroment variables and currentBuild global variables
+http://ec2-34-255-10-206.eu-west-1.compute.amazonaws.com:8080/env-vars.html/ 
+http://ec2-34-255-10-206.eu-west-1.compute.amazonaws.com:8080/job/new-pipeline-test-01/pipeline-syntax/globals#currentBuild
+
+
 [![Build Status](http://ec2-34-244-30-52.eu-west-1.compute.amazonaws.com:8080/buildStatus/icon?job=new-pipeline-test-01)](http://ec2-3-255-233-100.eu-west-1.compute.amazonaws.com:8080/job/new-pipeline-test-01/) 
 ## step by step guide for install docker on ubuntu
 
