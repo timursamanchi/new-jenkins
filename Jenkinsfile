@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        MY_STR = 'Hi this is Timur'
+        MY_STR = 'Hi this is Timur...'
     }
 
     stages {
