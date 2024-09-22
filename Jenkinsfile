@@ -12,6 +12,7 @@ pipeline {
         MY_STR = 'Hi this is Timur...'
         MAX_SIZE = 10
         MIN_SIZE = 100
+        D = currentBuild.currentResult
     }
 
     stages {
@@ -36,7 +37,7 @@ pipeline {
                 echo "Build ID: ${BUILD_ID}"
                 echo "Results: ${currentBuild.currentResult}"
                 sh 'echo "Build ID: ${BUILD_ID}" >> new-jenkins-pipeline-report.txt'
-                sh 'echo "Result: ${currentBuild.currentResult}" >> new-jenkins-pipeline-report.txt'
+                sh 'echo "Result: ${D}" >> new-jenkins-pipeline-report.txt'
                 archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
             }
         }
