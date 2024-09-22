@@ -3,6 +3,8 @@ pipeline {
 
     environment {
         MY_STR = 'Hi this is Timur...'
+        MAX_SIZE = 10
+        MIN_SIZE = 100
     }
 
     stages {
@@ -19,6 +21,7 @@ pipeline {
         stage ('Report') {
             steps {
                 sh 'echo "this is a report" > new-jenkins-pipeline-report.txt'
+                echo "currentBuild.duration"
             }
         }
         stage ('post') {
