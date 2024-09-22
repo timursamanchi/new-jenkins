@@ -17,7 +17,7 @@ pipeline {
             }
         }
         stage ('Report') {
-            stps {
+            steps {
                 sh 'echo "this is a report" > new-jenkins-pipeline-report.txt'
             }
         }
