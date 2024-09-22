@@ -16,7 +16,7 @@
 !/jobs
 !/.gitignore
 !/*.xml
-!/*.txt
+!/new-jenkins-pipeline-report.txt
 !/Jenkinsfile
 
 # Ignore all files in jobs subdirectories except for folders.
