@@ -25,6 +25,7 @@ pipeline {
             steps {
                 echo "Build ID: ${BUILD_ID}"
                 sh 'echo "Build ID: ${BUILD_ID}" >> new-jenkins-pipeline-report.txt'
+                archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
             }
         }
     }
