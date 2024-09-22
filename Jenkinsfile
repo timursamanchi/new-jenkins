@@ -2,8 +2,9 @@ pipeline {
     agent any
 
     parameters {
-
-
+        string ( name: 'version',
+            defaultValue: 'xx.x.x',
+            description: 'Enter version to upgrade.')
     }
 
     environment {
