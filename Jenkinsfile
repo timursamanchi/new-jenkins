@@ -36,20 +36,27 @@ pipeline {
     }
 
     stages {
-        stage ('testing') {
+        stage ('TESTING') {
             steps {
                 echo 'hello world'
             }
         }
-        stage ('install') {
+        stage ('INSTALLING') {
             steps {
                 echo "you know ${MY_STR}"
             }
         }
+        stage ('STAGING') {
+            steps {
+                echo "deploying to ${params.AWS_REGION}"
+            }
+        }
+
         stage ('Report') {
             steps {
                 sh 'echo "this is a report" > new-jenkins-pipeline-report.txt'
                 echo "build duration: ${currentBuild.duration}"
+
             }
         }
         stage ('post') {
