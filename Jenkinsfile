@@ -5,11 +5,17 @@ pipeline {
     parameters {
         string ( name: 'version',
             defaultValue: 'xx.x.x',
-            description: 'Enter version to upgrade.')
+            description: 'Enter version to upgrade.'
+        )
         
         booleanParam ( name: 'RUN TEST',
             defaultValue: false,
             description: 'Toggle this value to run the tests'
+        )
+
+        text ( name: 'reasons',
+            defaultValue: 'Start of Refresh Cycle, spoke to John from IT,...lablablabla'
+            description: 'Enter reasons for upgrade'
         )
     }
 
@@ -17,7 +23,6 @@ pipeline {
         MY_STR = 'Hi this is Timur...'
         MAX_SIZE = 10
         MIN_SIZE = 100
-        D = "${currentBuild.currentResult}"
     }
 
     stages {
