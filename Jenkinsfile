@@ -44,7 +44,7 @@ pipeline {
     stages {
         stage ('TESTING') {
             steps {
-                echo 'hello world',
+                echo 'hello world'
                 sh 'echo "this is a report" > new-jenkins-pipeline-report.txt'
             }
         }
@@ -72,7 +72,7 @@ pipeline {
                 }
             }
             steps {
-                input message: 'Confirm deployment to production...', ok: 'Deploy',
+                input message: 'Confirm deployment to production...', ok: 'Deploy'
                 echo "Deploying to ${params.ENVIRONMENT}, manual approval required"
                 
             }
@@ -85,7 +85,7 @@ pipeline {
 
         stage ('Report') {
             steps {
-                sh 'echo "this is another line in the report" >> new-jenkins-pipeline-report.txt',
+                sh 'echo "this is another line in the report" >> new-jenkins-pipeline-report.txt'
                 echo "build duration: ${currentBuild.duration}"
 
             }
