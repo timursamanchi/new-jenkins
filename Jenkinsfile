@@ -96,9 +96,10 @@ pipeline {
                 echo "Results: ${currentBuild.currentResult}"
                 echo "RUN the tests?: ${params.RUN_TEST}"
 
-                sh 'echo "Build ID: ${BUILD_ID}" >> new-jenkins-pipeline-report.txt'
-                sh 'echo "TEST Line ${params.ENVIRONMENT}" >> new-jenkins-pipeline-report.txt'
-                
+                sh '''#!/bin/bash
+                    echo "Build ID: ${BUILD_ID}" >> new-jenkins-pipeline-report.txt
+                    echo "TEST Line ${params.ENVIRONMENT}" >> new-jenkins-pipeline-report.txt
+                '''
                 archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
             }
         }
