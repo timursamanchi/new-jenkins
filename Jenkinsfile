@@ -23,9 +23,15 @@ pipeline {
             description: 'Select deployment region.'
         )
 
+        choice ( name: 'ENVIRONMENT',
+            choices: ['DEV','PROD','STAGING'],
+            description: 'Enter enviroment name for depolyment.'
+
+        )
+
         password ( name: 'DB2_PASSWORD',
-            defaultValue: 'fuckoff',
-            description: 'enter Db2 password or else.'
+            defaultValue: 'f1234452345344564345645634',
+            description: 'Enter Db2 password.'
         )
     }
 
@@ -46,6 +52,30 @@ pipeline {
                 echo "you know ${MY_STR}"
             }
         }
+        stage ('Deploy to non-production environment') {
+            when {
+                // only deploy if environment is not PROD
+                expression {
+                    params.ENVIRONMENT != 'PROD'
+                }
+            }
+            steps {
+                echo "Deploying to ${params.ENVIRONMENT}"
+            }
+        }
+        stage ('Deploy to production') {
+            // only deploy to PROD
+            when {
+                expression {
+                    params.ENVIRONMENT == 'PROD'
+                }
+            }
+            steps {
+                input message 'Confirm Deployment to PROD...', ok: 'Deploy'
+                echo "Deploying to ${params.ENVIRONMENT}, manual approval required"
+                
+            }
+        }
         stage ('STAGING') {
             steps {
                 echo "deploying to ${params.AWS_REGION}"
@@ -64,7 +94,9 @@ pipeline {
                 echo "Build ID: ${BUILD_ID}"
                 echo "Results: ${currentBuild.currentResult}"
                 echo "RUN the tests?: ${params.RUN_TEST}"
+
                 sh 'echo "Build ID: ${BUILD_ID}" >> new-jenkins-pipeline-report.txt'
+                sh 'echo "Deploying to ${params.ENVIRONMENT}" >> new-jenkins-pipeline-report.txt
 
                 archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
             }
