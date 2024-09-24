@@ -45,7 +45,7 @@ pipeline {
         stage ('TESTING') {
             steps {
                 echo 'hello world',
-                sh 'echo "this is a report" > new-jenkins-pipeline-report.txt'
+                sh 'echo "this is a report" > new-jenkins-pipeline-report.txt',
             }
         }
         stage ('INSTALLING') {
