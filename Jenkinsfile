@@ -96,6 +96,8 @@ pipeline {
                 echo "Results: ${currentBuild.currentResult}"
                 echo "RUN the tests?: ${params.RUN_TEST}"
 
+                sh "printf \"This is the change log.\" > report.txt"
+
                 sh '''#!/bin/bash
                     echo "Build ID: ${BUILD_ID}" >> new-jenkins-pipeline-report.txt
                     echo "Deployment environment: $ENVIRONMENT" >> new-jenkins-pipeline-report.txt
