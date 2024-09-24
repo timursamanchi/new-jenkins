@@ -44,7 +44,8 @@ pipeline {
     stages {
         stage ('TESTING') {
             steps {
-                echo 'hello world'
+                echo 'hello world',
+                sh 'echo "this is a report" > new-jenkins-pipeline-report.txt'
             }
         }
         stage ('INSTALLING') {
@@ -84,7 +85,7 @@ pipeline {
 
         stage ('Report') {
             steps {
-                sh 'echo "this is a report" > new-jenkins-pipeline-report.txt'
+                sh 'echo "this is another line in the report" >> new-jenkins-pipeline-report.txt'
                 echo "build duration: ${currentBuild.duration}"
 
             }
