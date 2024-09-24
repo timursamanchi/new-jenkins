@@ -92,12 +92,12 @@ pipeline {
         }
         stage ('post') {
             steps {
-                echo "Build ID: ${BUILD_ID}"
-                echo "Results: ${currentBuild.currentResult}"
-                echo "RUN the tests?: ${params.RUN_TEST}"
+                echo "Build ID: ${BUILD_ID}",
+                echo "Results: ${currentBuild.currentResult}",
+                echo "RUN the tests?: ${params.RUN_TEST}",
 
-                sh 'echo "Build ID: ${BUILD_ID}" >> new-jenkins-pipeline-report.txt'
-                sh 'echo "Deploying to ${params.ENVIRONMENT}" >> new-jenkins-pipeline-report.txt
+                sh 'echo "Build ID: ${BUILD_ID}" >> new-jenkins-pipeline-report.txt',
+                sh 'echo "Deploying to ${params.ENVIRONMENT}" >> new-jenkins-pipeline-report.txt',
 
                 archiveArtifacts allowEmptyArchive: true, artifacts: '*.txt', fingerprint: true, followSymlinks: false, onlyIfSuccessful: true
             }
