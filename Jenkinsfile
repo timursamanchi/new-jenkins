@@ -72,8 +72,7 @@ pipeline {
                 }
             }
             steps {
-                input message 'Confirm Deployment to PROD...', ok: 'Deploy'
-                input message: 'Confirm deployment to production...', ok: 'Deploy'
+                input message: 'Confirm deployment to production...', ok: 'Deploy',
                 echo "Deploying to ${params.ENVIRONMENT}, manual approval required"
                 
             }
